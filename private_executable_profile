@@ -1,0 +1,19 @@
+# Profile Files
+for i in /data/data/alsultan.shell/rootfs/usr/etc/profile.d/*.sh; do
+	if [ -r $i ]; then
+		. $i
+	fi
+done
+unset i
+
+# Interactive Bash Login Shells
+if [ "$BASH" ]; then
+    if [[ "$-" == *"i"* ]]; then
+        if [ -r /data/data/alsultan.shell/rootfs/usr/etc/bash.bashrc ]; then
+            . /data/data/alsultan.shell/rootfs/usr/etc/bash.bashrc
+        fi
+        if [ -r @ALSULTAN_HOME@/.bashrc ]; then
+            . @ALSULTAN_HOME@/.bashrc
+        fi
+    fi
+fi
