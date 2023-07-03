@@ -1,0 +1,10 @@
+Welcome To AL-SULTAN Shell
+
+Package Management:
+
+ » Install Package    [2m   pm install <package>  [0m
+ » Remove Package     [2m   pm remove <package>   [0m
+ » Upgrade Packages   [2m   pm upgrade            [0m
+
+Run [2mhelp[0m For Information, And [2msupport[0m For Issues
+
