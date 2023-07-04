@@ -1,0 +1,37 @@
+. /data/data/alsultan.shell/rootfs/usr/etc/profile
+
+# Command Not Found Suggestions
+command_not_found_handler() 
+{
+    /data/data/alsultan.shell/rootfs/usr/bin/na "$1" 2>/dev/null \
+        || echo -e "Command '${1}' Not Found\n" >&2
+}
+
+setopt +o nomatch
+
+. /data/data/alsultan.shell/rootfs/usr/etc/profile
+
+if [ "`id -u`" -eq 0 ]; then
+  PS1="~# "
+else
+  PS1="~%% "
+fi
+
+# Enable Color Support
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Some More Useful Aliases
+alias ll='ls -lA'
+alias la='ls -A'
+alias l1='ls -1'
+alias l='ls'
+alias cls='clear'
+
+if [ ! -f /data/data/alsultan.shell/rootfs/home/.hushlogin ] && [ -f /data/data/alsultan.shell/rootfs/usr/etc/motd ]; then
+    cat /data/data/alsultan.shell/rootfs/usr/etc/motd
+fi
+
+
